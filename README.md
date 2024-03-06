@@ -2,6 +2,13 @@
 
 A new Flutter project.
 
+## task
+- [x] init projec
+- [x] center text hi user
+- [x] top app bar home
+- done by 3/6 
+- [ ] Bottom push 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
