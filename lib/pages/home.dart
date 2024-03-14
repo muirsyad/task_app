@@ -21,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         surfaceTintColor: Colors.white,
         // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -35,10 +35,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
-              child: Column(
+              padding: EdgeInsets.only(top: MediaQuery.of(context).size.width * 0.5),
+              child: const Column(
                 children: [
                   Text(
                     'Good Night, User',
@@ -57,11 +58,46 @@ class _MyHomePageState extends State<MyHomePage> {
             //   "You can make magic happen",
             //   style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             // ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: const Image(
-                  width: 300.0, image: AssetImage('images/semi.png')),
-            ),
+            Container(
+              child: Column(
+                children: [
+                   const Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Image(width: 300.0, image: AssetImage('images/semi.png')),
+            ),Container(
+              color: Colors.white,
+              height: 80,
+              child: Row(
+                children: [
+                  IconButton(icon: Icon(Icons.home),
+                  onPressed: ()=>{},),
+                  SizedBox(
+                    width: 300,
+                    height: 50,
+                    child: Center(
+                      child: TextField(
+                        
+                        decoration: InputDecoration(
+                          // labelText: "Iwant",
+                          suffixIcon: Icon(Icons.light),
+                          hintText: "I want to",
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(50),
+                                
+                                )
+                                ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+
+                ],
+              ),
+            )
+           
+            
             // Padding(
             //   padding: EdgeInsets.only(
             //       bottom: MediaQuery.of(context).viewInsets.bottom),
@@ -78,20 +114,20 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-          height: 100,
-          surfaceTintColor: Colors.white,
-          color: Color.fromARGB(255, 255, 255, 255),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Icon(Icons.home),
-              SizedBox(
-                width: 200,
-                child: TextField(),
-              )
-            ],
-          )),
+      // bottomNavigationBar: const BottomAppBar(
+      //     height: 100,
+      //     surfaceTintColor: Colors.white,
+      //     color: Color.fromARGB(255, 255, 255, 255),
+      //     child: Row(
+      //       crossAxisAlignment: CrossAxisAlignment.start,
+      //       children: [
+      //         Icon(Icons.home),
+      //         SizedBox(
+      //           width: 200,
+      //           child: TextField(),
+      //         )
+      //       ],
+      //     )),
     );
   }
 }

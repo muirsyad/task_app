@@ -1,0 +1,9 @@
+ENCOUNTER ISSUE OR DAILY LOG
+
+14/4/2024
+-Found issue about keyboard covering bottom app bar, i want to make bottom app bar
+to pushed above keyboard. Other widgets where pushed nut bottom app bar still under keyboard
+
+- Found solution which i cannot used bottomappbar, because its behaviour not allowed 
+event have bootmresized inset in scoffold param. SO the working solution is to just used container to put
+content from bottomappbar so it will push eveything in that content above keyboard.
